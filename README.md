@@ -107,42 +107,40 @@ sudo tcpdump -i eth0 -w captura.pcap
 
 ## Capturas
 ### Antes — tabla CAM normal
-![Antes](capturas/05_antes.png)
+![Antes](mac1.png)
 
 ### Script corriendo en Kali
-![Script](capturas/05_script.png)
+![Script](mac2.png)
 
 ### Tabla CAM llena
-![CAM llena](capturas/05_cam_llena.png)
+![CAM llena](mac3.png)
 
-### Tráfico capturado
-![Tráfico](capturas/05_trafico.png)
 
 ---
 
 ## Contramedida
 ```bash
-SW1(config)# interface gi3/3
-SW1(config-if)# switchport port-security
-SW1(config-if)# switchport port-security maximum 5
-SW1(config-if)# switchport port-security violation restrict
-SW1(config-if)# switchport port-security mac-address sticky
-SW1(config-if)# exit
-SW1(config)# end
-SW1# write memory
+SW1-20211150(config)# interface gi3/3
+SW1-20211150(config-if)# switchport port-security
+SW1-20211150config-if)# switchport port-security maximum 5
+SW1-20211150(config-if)# switchport port-security violation restrict
+SW1-20211150(config-if)# switchport port-security mac-address sticky
+SW1-20211150(config-if)# exit
+SW1-20211150(config)# end
+SW1-20211150# write memory
 
 # Verificar:
-SW1# show port-security
-SW1# show port-security interface gi3/3
+SW1-20211150# show port-security
+SW1-20211150# show port-security interface gi3/3
 ```
 
 ### Verificación contramedida
-![Contramedida](capturas/05_contramedida.png)
+![Contramedida](mac4.png)
 
 ---
 
 ## Video
-[Ver demostración en YouTube](URL_DEL_VIDEO)
+[Ver demostración en YouTube](https://youtu.be/UfMb8rqMRes?si=ZM3M9erNjnuk3G5J)
 
 ---
 
